@@ -119,4 +119,3 @@ A Scrapy request is created for each request to search for the regex pattern and
 pytest
 ```
 
-## Benchmark
