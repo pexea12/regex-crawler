@@ -37,13 +37,11 @@ class MainSpider(scrapy.Spider):
         }
 
         for match in matches:
-            log['matches'].append([
-                {
-                    'text': match.group(0),
-                    'start': match.start(),
-                    'end': match.end(),
-                },
-            ])
+            log['matches'].append({
+                'text': match.group(0),
+                'start': match.start(),
+                'end': match.end(),
+            })
 
         self.db.insert(log)
 

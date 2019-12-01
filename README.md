@@ -86,20 +86,16 @@ The default output is `db.json` using [TinyDB](https://tinydb.readthedocs.io/en/
   "url": "https://en.wikipedia.org/wiki/Vietnam",
   "regex": "Vietnam(ese)? victory",
   "matches": [
-    [
-      {
-        "text": "Vietnamese victory",
-        "start": 3426,
-        "end": 3444
-      }
-    ],
-    [
-      {
-        "text": "Vietnamese victory",
-        "start": 3728,
-        "end": 3746
-      }
-    ]
+    {
+      "text": "Vietnamese victory",
+      "start": 3426,
+      "end": 3444
+    },
+    {
+      "text": "Vietnamese victory",
+      "start": 3728,
+      "end": 3746
+    }
   ]
 },
 ```
@@ -119,5 +115,8 @@ A Scrapy request is created for each request to search for the regex pattern and
 ![Structure](./structure.jpg)
 
 ## Test
+```
+pytest
+```
 
 ## Benchmark

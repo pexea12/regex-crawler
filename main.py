@@ -1,5 +1,4 @@
 import argparse
-import scrapy
 from scrapy.crawler import CrawlerProcess
 import json
 import schedule
