@@ -12,6 +12,8 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+This repo uses [Scrapy](https://scrapy.org/) for scraping.
+
 ## Usage
 ```
 usage: main.py [-h] [--db-path DB_PATH] -u URL -r REGEX [--input-path INPUT_PATH]
