@@ -1,9 +1,9 @@
-# Crawl URLs and match with regexes
+# Crawl URLs and match with regex patterns
 
 ## Requirements
 - [Task](./cand_prog_task.md)
 
-Takes a configured grouped list of urls to check, for each url it must be possible to specify regular expressions that are matched in the content.
+Take a configured grouped list of urls to check, for each url it must be possible to specify regular expressions that are matched in the content.
 
 The script run daily at 00:00. The period can be changed in the source code at line 80 of [main.py](./main.py). Read [schedule](https://schedule.readthedocs.io/en/stable/index.html) for more details.
 
@@ -50,17 +50,29 @@ The sample JSON input file for `--input-path` has the structure:
 
 Search for the regex pattern `\d+` (numbers) of the [URL](https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers) and output to `/home/user/test.json`
 ```
-python main.py -u 'https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers' -r '\d+' --db-path /home/user/test.json'
+python main.py \
+  -u 'https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers' \
+  -r '\d+' \
+  --db-path /home/user/test.json'
 ```
 
 Specifiy multiple URLs and regex patterns:
 ```
-python main.py -u 'https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers' -r '\d+' -u 'https://www.lonelyplanet.com/finland' -r 'Finland'
+python main.py \
+  -u 'https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers' \
+  -r '\d+' \
+  -u 'https://www.lonelyplanet.com/finland' \
+  -r 'Finland'
 ```
 
 and with JSON input file:
 ```
-python main.py -u 'https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers' -r '\d+' -u 'https://www.lonelyplanet.com/finland' -r 'Finland' --input-path input.json
+python main.py \
+  -u 'https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers'
+  -r '\d+' \
+  -u 'https://www.lonelyplanet.com/finland' \
+  -r 'Finland' \
+  --input-path input.json
 ```
 
 ### Output
